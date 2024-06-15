@@ -46,7 +46,6 @@ class ModelUser extends CI_Model
 
     public function hapusAnggota($id)
     {
-        // Hapus data anggota dari database
         $this->db->where('id', $id);
         $this->db->delete('user');
     }
