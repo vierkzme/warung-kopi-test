@@ -60,6 +60,14 @@ class User extends CI_Controller
                 'required' => 'Nama tidak Boleh Kosong'
             ]
         );
+
+        $data['sidebar_menu'] = [
+            ['title' => 'Dashboard', 'url' => 'admin', 'icon' => 'fas fa-fw fa-tachometer-alt'],
+            ['title' => 'Kategori Menu', 'url' => 'menu/kategori', 'icon' => 'fas fa-fw fa-table'],
+            ['title' => 'Data Menu', 'url' => 'menu', 'icon' => 'fas fa-fw fa-table'],
+            ['title' => 'Data Anggota', 'url' => 'user/anggota', 'icon' => 'fa fa-fw fa-user']
+        ];
+
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
